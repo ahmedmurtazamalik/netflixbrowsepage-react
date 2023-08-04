@@ -1,12 +1,15 @@
 import './style.css';
+import FacebookIcon from './data/icons/fb.png';
+import InstagramIcon from './data/icons/insta.png';
+import YoutubeIcon from './data/icons/yt.png';
 
 function Footer() {
     return (
         <div id="footer">
             <div id="footericons">
-                <img src="data/icons/fb.png" alt="Facebook Icon" />
-                <img src="data/icons/insta.png" alt="Instagram Icon" />
-                <img src="data/icons/yt.png" alt="YouTube Icon" />
+                <img src={FacebookIcon} alt="Facebook Icon" />
+                <img src={InstagramIcon} alt="Instagram Icon" />
+                <img src={YoutubeIcon} alt="YouTube Icon" />
             </div>
 
             <div className="footerlistcontainer">

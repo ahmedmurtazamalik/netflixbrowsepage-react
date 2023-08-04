@@ -1,4 +1,8 @@
 import './style.css';
+import caretIcon from './data/icons/caretwhite.png';
+import searchIcon from './data/icons/search.png';
+import notifIcon from './data/icons/notifwhite.png';
+import profileIcon from './data/icons/profile.png';
 
 function Header() {
   return (
@@ -13,7 +17,7 @@ function Header() {
         <ul>
           <li><a href="#">Browse</a></li>
         </ul>
-        <img id="caret" src="data\icons\caretwhite.png" alt="caret" />
+        <img id="caret" src={caretIcon} alt="caret" />
       </div>
 
       <div id="navbar1">
@@ -29,12 +33,12 @@ function Header() {
 
       <div id="navbar2">
         <div id="icons">
-          <img id="searchicon" src="data\icons\search.png" alt="searchicon" />
-          <img id="notificon" src="data\icons\notifwhite.png" alt="notificon" />
-          <img id="profileicon" src="data\icons\profile.png" alt="profileicon" />
+          <img id="searchicon" src={searchIcon} alt="searchicon" />
+          <img id="notificon" src={notifIcon} alt="notificon" />
+          <img id="profileicon" src={profileIcon} alt="profileicon" />
         </div>
         <div id="arrow">
-          <img id="caret" src="data\icons\caretwhite.png" alt="caret" />
+          <img id="caret" src={caretIcon} alt="caret" />
         </div>
       </div>
     </div>

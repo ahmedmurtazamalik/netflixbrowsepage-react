@@ -135,6 +135,88 @@
   line-height: 10px;
 }
 
+@media (max-width: 768px) {
+  #navbar1list {
+    display: none;
+  }
+
+  #browse {
+    display: flex;
+  }
+}
+
+#video-container {
+  position: relative;
+  width: 100%;
+}
+
+#maintrailer {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+#trendingtitle {
+  background-color: black;
+  font-family: NetflixSansLight;
+  color: white;
+  padding-left: 2%;
+  padding-bottom: 0.5%;
+  padding-top: 1%;
+}
+
+#awardwinningsection {
+  margin-bottom: 10rem;
+}
+
+.title {
+  margin-top: 3.5%;
+  background-color: black;
+  font-family: NetflixSansLight;
+  color: white;
+  padding-left: 2%;
+  padding-bottom: 0.5%;
+  padding-top: 1%;
+  cursor: pointer;
+}
+
+.section::-webkit-scrollbar {
+  width: 0;
+  height: 10px;
+  background: transparent;
+}
+
+.section::-webkit-scrollbar-track {
+  background: black;
+}
+
+.section::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+
+.section::-webkit-scrollbar-thumb:hover {
+  background: rgb(97, 86, 86);
+  border-radius: 5px;
+}
+
+
+.section {
+  width: 100%;
+  height: 11rem;
+  display: block;
+  align-items: center;
+  white-space: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  position: relative;
+  transition: height 0.3s;
+  scroll-snap-type: x mandatory;
+}
+
 
 #footer {
   width: 82.5%;
