@@ -1,27 +1,43 @@
-import './style.css';
-
+import React, { useState } from 'react';
 import ImageDiv from './ImageDiv';
+import sources from './RandomSources';
 
-import kotfmThumbnail from './data/media/kotfm-thumbnail.jpg';
-import miThumbnail from './data/media/mi-thumbnail.jpg';
-import napoleonThumbnail from './data/media/napoleon-thumbnail.jpg';
-import oppenheimerThumbnail from './data/media/oppenheimer-thumbnail.jpg';
-import wonkaThumbnail from './data/media/wonka-thumbnail.jpg';
-
-import koftmTrailer from './data/media/kotfm-trailer.mp4';
-import miTrailer from './data/media/mi-trailer.mp4';
-import napoleonTrailer from './data/media/napoleon-trailer.mp4';
-import oppenheimerTrailer from './data/media/oppenheimer-trailer.mp4';
-import wonkaTrailer from './data/media/wonka-trailer.mp4';
+function getRandomIndex(array) {
+    return Math.floor(Math.random() * array.length);
+}
 
 function Section(props) {
-    const imageSources = [{ kotfmThumbnail }, { miThumbnail }, { napoleonThumbnail }, { oppenheimerThumbnail }, { wonkaThumbnail }];
-    const videoSources = [{ koftmTrailer }, { miTrailer }, { napoleonTrailer }, { oppenheimerTrailer }, { wonkaTrailer }];
+    const [sectionHeight, setSectionHeight] = useState('11rem');
+    const [imageDivs] = useState(
+        Array.from({ length: 15 }, (_, index) => {
+            const randomSourceIndex = getRandomIndex(sources);
+            const { imageSource, videoSource } = sources[randomSourceIndex];
+            return {
+                imageSource,
+                videoSource,
+            };
+        })
+    );
 
+    const handleMouseEnter = () => {
+        setSectionHeight('15rem');
+    };
+
+    const handleMouseLeave = () => {
+        setSectionHeight('11rem');
+    };
 
     return (
-        <div id={props.sectionId} className="section">
-
+        <div id={props.sectionId} className="section" style={{ height: sectionHeight }}>
+            {imageDivs.map((imageData, index) => (
+                <ImageDiv
+                    key={index}
+                    imageSource={imageData.imageSource}
+                    videoSource={imageData.videoSource}
+                    onMouseEnter={handleMouseEnter}
+                    onMouseLeave={handleMouseLeave}
+                />
+            ))}
         </div>
     );
 }
