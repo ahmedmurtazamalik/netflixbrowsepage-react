@@ -1,7 +1,6 @@
 import React, { useState, useRef } from 'react';
 
 function ImageDiv(props) {
-    const [isVideoPlaying, setIsVideoPlaying] = useState(false);
     const [isMouseOver, setIsMouseOver] = useState(false);
 
     const videoRef = useRef(null);
@@ -10,12 +9,9 @@ function ImageDiv(props) {
         setIsMouseOver(true);
         if (videoRef.current) {
             videoRef.current.style.display = 'block';
-            videoRef.current.currentTime = 0; // Reset current time to 0
-
-            // Load and play the video when it's ready
+            videoRef.current.currentTime = 0;
             videoRef.current.addEventListener('canplay', () => {
                 videoRef.current.play().catch(error => {
-                    // Handle play error if needed
                     console.error('Error playing video:', error);
                 });
             });
